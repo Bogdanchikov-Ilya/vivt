@@ -1,0 +1,398 @@
+//<МИКСИНЫ>===============================================================================================
+
+//</МИКСИНЫ>===============================================================================================
+
+//<ШРИФТЫ>===============================================================================================
+
+//<Подключаем шрифты>=======================================================================================
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+//</Подключаем шрифты>=======================================================================================
+
+//<Иконочные шрифты>==========================================================================================
+
+//</Иконочные шрифты>==========================================================================================
+
+//<Шрифт по умолчанию>==========================================================================================
+$fontfamily: "";
+
+
+//</Шрифт по умолчанию>==========================================================================================
+
+//</ШРИФТЫ>=======================================================================================================
+
+
+//<ПЕРЕМЕННЫЕ>===========================================================================================================
+$minwidth: 320px;
+$mw: 1170;
+$md1: $mw + 12;
+$md2: 991.98;
+$md3: 767.98;
+$md4: 479.98;
+//</ПЕРЕМЕННЫЕ>===========================================================================================================
+
+//<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+@import "null.scss";
+body {
+	color: #000;
+	font-size: 14px;
+	&.lock {
+		overflow: hidden;
+	}
+}
+//</ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+
+//<ОБОЛОЧКА>===========================================================================================================
+.wrapper {
+	width: 100%;
+	min-height: 100%;
+	overflow: hidden;
+	&.loaded {
+	}
+}
+//</ОБОЛОЧКА>===========================================================================================================
+
+//<ОСНОВНАЯ СЕТКА>===========================================================================================================
+.container {
+	max-width: $mw + px;
+	margin: 0 auto;
+	width: 100%;
+	@media (max-width: $md1+px) {
+		max-width: 970px;
+	}
+	@media (max-width: $md2+px) {
+		max-width: 750px;
+	}
+	@media (max-width: $md3+px) {
+		max-width: none;
+		padding: 0 10px;
+	}
+}
+//</ОСНОВНАЯ СЕТКА>===========================================================================================================
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
+
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
+
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
+
+//<ОСНОВНОЙ БЛОК>====================================================================================================
+*{
+	font-family: 'Montserrat', sans-serif !important;
+}
+
+.main{
+    position: absolute;
+    left: 50%;
+    top:50%;
+    width: 920px;
+    height: 630px;
+    transform: translate(-50%,-50%);
+    display: flex;
+}
+
+
+
+.sidebar{
+    width: 35%;
+    height: 100%;
+    background-color: #F4F6F8;
+	border: 2px solid #F1F1F1;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.sidebar__bottom{
+	
+	height: 80px;
+	
+}
+
+.content{
+    border: 2px solid #F1F1F1;
+    height: 100%;
+    width: 70%;
+}
+
+.group__list{
+	padding: 30px;
+	padding-top: 50px;
+}
+
+.list__title{
+	margin-bottom: 70px;
+
+}
+
+ul{
+	
+	display: grid;
+}
+
+li{
+    span{
+        font-size: 17px;
+		margin-left: 10px;	
+		
+		&::after{
+			
+		}
+    }
+}
+
+li{
+    display: inline-flex;
+}
+
+.list__item{
+	margin-bottom: 15px;
+	display: flex;
+	padding-top: 15px;
+	// border: 1px solid red;
+	
+}
+
+.active{
+	background-color: white;
+	padding-left: 10px;
+	border-radius: 10px;
+	-webkit-box-shadow: -1px -2px 42px -6px rgba(34, 60, 80, 0.2);
+	-moz-box-shadow: -1px -2px 42px -6px rgba(34, 60, 80, 0.2);
+	box-shadow: -1px -2px 42px -6px rgba(34, 60, 80, 0.2);
+	margin-bottom: 10px;		
+	border: 1px solid white;
+	transition: .2s;
+}
+
+svg{
+    fill: #7C7C7C;
+}
+
+
+
+.color_list{
+	width: 13px;
+	height: 13px;
+	background-color: #B6E6BD;
+	border-radius: 50%;
+	margin-left: 0px;
+	margin-top: 2px;
+}
+
+.item__text{
+	margin-left: 30px;
+}
+
+.item__text::after{
+	content: '';
+	position: absolute;
+	height: 10px;
+	width: 10px;	
+}
+
+.item__wrapper{
+	margin-bottom: 10px;
+	border-radius: 10px;
+	padding-left: 10px;
+	cursor: pointer;
+	transition: .1s;
+	// border: 1px solid red;
+
+	&:hover{
+		background-color: white;
+		transition: .05s;
+	}
+}
+
+.button__add{
+	width: 230px;
+	height: 55px;
+	background-color: #4DD599;
+	border-radius: 10px;
+	margin: auto;
+	color:white;
+	text-align: center;
+	cursor: pointer;
+	font-size: 22px;
+	padding-top: 15px;
+	border-bottom: 3px solid #2cac74;
+	transition: .2s ease-in-out;
+	
+	&:hover{
+		background-color: #66e4ad;
+		border-bottom: 3px solid #4DD599;
+		transition: .2s ease-in-out;
+	}
+
+	&:active{
+		background-color: #2cac74;
+		border-bottom: 3px solid #4DD599;
+		transition: .08s ease-in-out;
+	}
+}
+
+.popup{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.8) ;
+	top:0;
+	left: 0;
+	opacity: 0;
+	visibility: hidden;
+	transition: all .6s ease 0s;	
+
+	&:target{
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
+.popup__body{
+	min-height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding:30px 10px;
+}
+
+.popup__content{
+	background-color: white;
+	border-radius: 10px;
+	max-width: 800px;
+	padding: 90px;
+	position: relative;
+	transform: translate(0, 100%);
+	opacity: 0;
+	transition: all .6s ease 0s;
+}
+
+.popup:target .popup__content{
+	transform: translate(0px, 0px);
+	opacity: 1;
+}
+
+.popup__title{
+	font-size: 25px;
+}
+
+.popup__close{
+	position: absolute;
+	right: 20px;
+	top:15px;
+	font-size: 25px;
+	color:black;
+}
+
+input{
+	border: 2px solid  #4DD599;
+	height: 50px;
+	border-radius: 10px;
+	width: 100%;
+
+	&::placeholder{
+		font-family: Arial, Helvetica, sans-serif;
+		padding-left: 10px;
+		font-size: 19px;
+	}
+}
+
+#close{
+	fill:black;
+	transition: .1s ease-in-out;
+
+	&:hover{
+		fill:#7C7C7C;
+		transition: .1s ease-in-out;
+	}
+}
+
+.popup__button{
+	width: 150px;
+	height: 35px;
+	background-color: #4DD599;
+	border-radius: 5px;
+	margin: auto;
+	color:white;
+	text-align: center;
+	cursor: pointer;
+	font-size: 20px;
+	padding-top: 5px;
+	border-bottom: 3px solid #2cac74;
+	transition: .2s ease-in-out;
+	margin-top: 30px;
+	font-family: Arial, Helvetica, sans-serif;
+	
+	&:hover{
+		background-color: #66e4ad;
+		border-bottom: 3px solid #4DD599;
+		transition: .2s ease-in-out;
+	}
+
+	&:active{
+		background-color: #2cac74;
+		border-bottom: 3px solid #4DD599;
+		transition: .08s ease-in-out;
+	}
+}
+
+.del__icon{
+	background-color: red;
+	position: absolute;
+	height: 2px;
+	width: 25px;
+
+	&::before{
+		background-color: red;
+		position: absolute;
+		height: 2px;
+		width: 25px;
+		top:20px;
+	}
+}
+
+#item__del{
+	position: absolute;
+	font-size: 42px;
+	transform: rotate(-45deg);
+	margin-left: 197px;
+	margin-top: -44px;
+	color:#ece9e9;
+	
+	transition: .2s ease-in-out;
+	
+	
+	&:hover{
+		color:red;
+		transition: .2s ease-in-out;
+		transform: rotate(90deg);
+	
+		
+	}
+}
+
+
+.item__bar{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	// border: 1px solid red;
+}
+
+.content__body{
+	padding:15px;
+}
+
+.title{
+	color:#64C4ED;
+	font-weight: 600;
+	font-size: 40px;
+	margin-bottom: 40px;
+}
+
+
+
+
+//</ОСНОВНОЙ БЛОК>====================================================================================================
